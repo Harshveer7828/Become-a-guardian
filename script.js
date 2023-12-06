@@ -550,37 +550,8 @@ function runAnimations() {
     } else {
       page3res()
       respage5()
-      document.body.style.overflow = 'hidden'
-
-
       timerButton.addEventListener("click", function () {
-        document.body.style.overflow = 'auto'
-
-        audio.play()
-        gsap.to("#page1", {
-          scale: 1,
-          duration: 0.5
-        })
-        gsap.to("#timer", {
-          opacity: 0,
-        })
-        gsap.to("#log", {
-          opacity: 1,
-        })
-        gsap.to(".lowertext1", {
-          scale: 1,
-        })
-        gsap.to(".nav", {
-          top: 0,
-          delay: 0.5,
-          duration: 0.5,
-          stagger: 0.3,
-          opacity: 1
-        })
-        gsap.to(".stickerdiv", {
-          scale: 1
-        })
-      
+        document.body.style.overflow = 'auto'      
       })
       // Code for handling small screens or alternative behavior
       document.querySelector("#page3-part1 h1").style.color="black"

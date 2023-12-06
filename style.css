@@ -1347,7 +1347,10 @@ body {
 
 
 @media(max-width:550px) {
+    body{
+        overflow: hidden;
 
+    }
     #main {
         overflow-x: hidden;
     }
