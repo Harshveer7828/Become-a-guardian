@@ -61,7 +61,7 @@ function page1() {
     if (grow < 100) {
       grow += Math.floor(Math.random() * 5);
       timer.innerHTML = grow + "%";
-    } else if (groq === 100) {
+    } else if (grow>100) {
       grow = 100 + "%";
       timer.style.transform = "translateY(-100%)";
       timerButton.style.transform = "translateY(-90%)";
@@ -626,6 +626,7 @@ function runAnimations() {
   // Check the screen width
   if (window.innerWidth >= 550) {
     // Code for animations on larger screens
+    page1();
     page3();
     page5();
     page7();
