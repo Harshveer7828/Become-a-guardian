@@ -1347,6 +1347,7 @@ body {
 
 
 @media(max-width:550px) {
+
     #main {
         overflow-x: hidden;
     }

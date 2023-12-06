@@ -1,4 +1,4 @@
-
+  
 gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -27,8 +27,9 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
-locoScroll.stop()
 var audio = new Audio("./insect-sound.mp3")
+locoScroll.stop()
+
 
 
 
@@ -549,8 +550,38 @@ function runAnimations() {
     } else {
       page3res()
       respage5()
-      locoScroll.stop()
+      document.body.style.overflow = 'hidden'
 
+
+      timerButton.addEventListener("click", function () {
+        document.body.style.overflow = 'auto'
+
+        audio.play()
+        gsap.to("#page1", {
+          scale: 1,
+          duration: 0.5
+        })
+        gsap.to("#timer", {
+          opacity: 0,
+        })
+        gsap.to("#log", {
+          opacity: 1,
+        })
+        gsap.to(".lowertext1", {
+          scale: 1,
+        })
+        gsap.to(".nav", {
+          top: 0,
+          delay: 0.5,
+          duration: 0.5,
+          stagger: 0.3,
+          opacity: 1
+        })
+        gsap.to(".stickerdiv", {
+          scale: 1
+        })
+      
+      })
       // Code for handling small screens or alternative behavior
       document.querySelector("#page3-part1 h1").style.color="black"
       document.querySelector(".first7").style.color="black"
